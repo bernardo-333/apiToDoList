@@ -10,6 +10,7 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    //alteração
     private String nome;
     private String email;
     private String senha;
