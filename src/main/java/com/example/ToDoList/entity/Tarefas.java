@@ -1,5 +1,6 @@
 package com.example.ToDoList.entity;
 
+import com.example.ToDoList.enums.StatusTarefa;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -18,6 +19,9 @@ public class Tarefas {
     @Column(length = 100)
     private String tarefa;
 
+    @Enumerated(EnumType.STRING)
+    private StatusTarefa status;
+
     @Column(length = 100)
     private Date prazo;
 
@@ -32,6 +36,10 @@ public class Tarefas {
 
     public String getNome() {
         return nome;
+    }
+
+    public StatusTarefa getStatus() {
+        return status;
     }
 
     public void setNome(String nome) {

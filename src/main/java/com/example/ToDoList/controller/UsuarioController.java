@@ -1,6 +1,8 @@
 package com.example.ToDoList.controller;
 
+import com.example.ToDoList.entity.Tarefas;
 import com.example.ToDoList.entity.Usuario;
+import com.example.ToDoList.enums.StatusTarefa;
 import com.example.ToDoList.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +29,9 @@ public class UsuarioController {
         List<Usuario> usuario = user.findAll();
         return usuario;
     }
+
+    Tarefas tarefas = new Tarefas("bernardo","fazer cursos",2007.08.10);
+
 
 
 }
