@@ -9,14 +9,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping("usuario")
+@RequestMapping("/usuarios")
 public class UsuarioController {
 
-    @Autowired
-    UsuarioRepository user;
+    private final UsuarioRepository user;
+
+    public UsuarioController(UsuarioRepository user) {
+        this.user = user;
+    }
 
     @GetMapping("salvar")
     public Usuario salvar() {
@@ -25,13 +29,8 @@ public class UsuarioController {
     }
 
     @GetMapping("mostrar")
-    public List<Usuario> mostrar(){
+    public List<Usuario> mostrar() {
         List<Usuario> usuario = user.findAll();
         return usuario;
     }
-
-    Tarefas tarefas = new Tarefas("bernardo","fazer cursos",2007.08.10);
-
-
-
 }
